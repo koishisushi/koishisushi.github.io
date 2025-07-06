@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'dogica';
+    src: url('./fonts/dogica-webfont.woff2') format('woff2'),
+    url('./fonts/dogica-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dogica';
+    src: url('./fonts/dogicabold-webfont.woff2') format('woff2'),
+    url('./fonts/dogicabold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.preload {
+    opacity: 0;
+}
+
+#active {
+    opacity: 100%;
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+}
+
+#active-box {
+    top: 50%;
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+}
+
+body {
+    font-family: "dogica", sans-serif;
+    background-color: #8774a1;
+    line-height: 1.2;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    top: -20%;
+    min-width: 100%;
+    min-height: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.outline { /* old I just made it invis cuz I'm too lazy to remove */
+    display: flex;
+    border-radius: 20px;
+    width: 390px;
+    height: 540px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 400px) {
+    .outline {
+        /* Shrink to 80% size */
+        transform: translate(-50%, -50%) scale(0.8);
+        /* Keep position centered */
+        top: 52%;
+        left: 50%;
+        position: absolute;
+        width: 390px;   /* keep original fixed size */
+        height: 540px;
+        transform-origin: center center;
+    }
+}
+
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid rgba(203, 194, 239, 1);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 380px;
+    height: 525px;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0 auto;
+    gap: 15px;
+    justify-content: center;
+}
+
+.navbar a {
+    background-color: #EFC9DE;
+    color: #6C5081;
+    font-size: 7px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px 13px;
+    box-shadow: 3px 3px #b495be;
+    text-decoration: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    transition-duration: 0.1s;
+}
+
+.navbar a:hover {
+    background-color: #c6a8b8;
+    transition-duration: 0.1s;
+}
+
+.divider {
+    background-color: #b495be;
+    margin: 5px auto;
+    border-radius: 3px;
+    width: 300px;
+    height: 3px;
+}
+
+.desc {
+    display: flex;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+    gap: 20px 15px;
+}
+
+.desc p {
+    flex: 1;
+    margin: auto;
+    color: #6C5081;
+    font-size: 10px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 170px;
+    height: 145px;
+}
+
+.name {
+    margin: 0;
+    padding: 0;
+    color: #6C5081;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 1px;
+    border-right: 3px solid;
+    animation:
+        typing 1.5s steps(10),
+        cursor .8s step-end infinite;
+}
+
+@keyframes cursor {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #6C5081
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+.info {
+    margin: 0;
+    padding: 0;
+    max-height: 100px;
+}
+
+.avatar {
+    height: 128px;
+    width: 128px;
+    margin: auto;
+    border: 2px solid rgba(203, 194, 239, 1);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.07) rotate(5deg);
+}
+
+.theme {
+    height: 234px;
+    width: 158px;
+    border-radius: 5px;
+}
+
+.long-info {
+    margin: 0;
+    padding: 0;
+    width: 140px;
+}
+
+.footer-box {
+    display: flex;
+    flex: 1;
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    text-align: center;
+}
+
+.footer {
+    color: #6C5081;
+    font-size: 8px;
+    opacity: 0.7;
+}
+
+.footer a {
+    color: #a27ac1;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
