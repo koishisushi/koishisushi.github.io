@@ -134,88 +134,10 @@ body {
     color: #6C5081;
 }
 
-.header {
-    display: flex;
-    height: 145px;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 170px;
-    height: 145px;
-}
-
-.name {
-    margin: 0;
-    padding: 0;
+.title {
     color: #6C5081;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    letter-spacing: 1px;
-    border-right: 3px solid;
-    animation:
-        typing 1.5s steps(10),
-        cursor .8s step-end infinite;
-}
-
-@keyframes cursor {
-    from, to {
-        border-color: transparent
-    }
-    50% {
-        border-color: #6C5081
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-.info {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-}
-
-.avatar {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    border: 2px solid rgba(203, 194, 239, 1);
-    transition: transform 0.2s ease;
-}
-
-.avatar:hover {
-    transform: scale(1.07) rotate(5deg);
-}
-
-.theme {
-    height: 234px;
-    width: 158px;
-    border-radius: 5px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-.main-body {
-    display: flex;
-    height: 236px;
-    gap: 15px;
-}
-
-.long-info {
-    height: 216px;
-    width: 140px;
-    overflow: hidden;
 }
 
 .footer {
