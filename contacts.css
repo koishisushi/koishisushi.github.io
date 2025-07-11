@@ -149,11 +149,21 @@ body {
     text-underline-offset: 2px
 }
 
+.links p {
+    margin: 0;
+    padding: 0;
+    font-size: 8px;
+}
+
+.links a {
+    color: #6C5081;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 15px;
+    gap: 25px;
     margin: 0;
     padding: 0;
     font-size: 12px;
@@ -167,7 +177,7 @@ body {
     display: flex;
     color: #6b5180;
     margin: 0 auto;
-    width: 300px;
+    width: 350px;
     border-radius: 50px;
     text-decoration: none;
     justify-content: space-between;
@@ -187,20 +197,40 @@ body {
     font-weight: 700;
 }
 
+.buttons a {
+    transition-duration: 0.1s;
+}
+
 .insta {
     background-color: #9b9ad6;
+}
+
+.insta:hover {
+    background-color: #b9b8e2;
 }
 
 .twitter {
     background-color: #b4a0db;
 }
 
+.twitter:hover {
+    background-color: #cbbde6;
+}
+
 .tiktok {
     background-color: #c5a7dd;
 }
 
+.tiktok:hover {
+    background-color: #d6c1e7;
+}
+
 .kofi {
     background-color: #d2acdf;
+}
+
+.kofi:hover {
+    background-color: #e0c5e9;
 }
 
 .footer {
