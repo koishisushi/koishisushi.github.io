@@ -23,7 +23,7 @@ galleryImages.forEach(img => {
             modalImg.classList.add("zoom");
         }, 0)
         // set the modal img to the img that was clicked
-        modalImg.src = this.src;
+        modalImg.src = this.dataset.fullsrc;
     }
 })
 
