@@ -125,7 +125,7 @@ body {
     flex-direction: column;
     height: 406px;
     padding: 15px 30px;
-    gap: 25px 15px;
+    gap: 15px 15px;
 }
 
 .desc p {
@@ -157,10 +157,25 @@ body {
     height: 3px;
 }
 
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.links div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 12px;
+    text-align: center;
+}
+
 .links p {
     margin: 0;
     padding: 0;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .links a {
@@ -184,9 +199,10 @@ body {
 .buttons a {
     display: flex;
     color: #6b5180;
+    font-size: 12px;
     margin: 0 auto;
-    padding: 15px 10px;
-    width: 300px;
+    padding: 13px 10px;
+    width: 270px;
     border-radius: 50px;
     text-decoration: none;
     justify-content: space-between;
