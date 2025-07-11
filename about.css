@@ -168,7 +168,8 @@ body {
     color: #6C5081;
     margin: 0 auto;
     padding: 0;
-    border-bottom: 2px solid currentColor;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .banner {

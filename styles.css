@@ -156,7 +156,8 @@ body {
     padding: 0;
     color: #6C5081;
     width: fit-content;
-    border-bottom: 2px solid currentColor;
+    text-decoration: underline;
+    text-underline-offset: 2px;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: 1px;
