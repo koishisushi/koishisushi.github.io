@@ -11,11 +11,9 @@ galleryImages.forEach(img => {
         // onclick, show modal display as "flex"
         modal.style.display = "flex";
 
-        // set a timeout so the page renders the transition
-        setTimeout(() => {
-            modal.classList.add("show")
-            modalImg.classList.add("zoom");
-        }, 0)
+        void modal.offsetHeight;
+        modal.classList.add("show");
+        modalImg.classList.add("zoom");
     }
 })
 
