@@ -1,6 +1,7 @@
 const body = document.querySelector(".preload");
 const outline = document.querySelector(".outline");
 
+// add a transition when page has loaded
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         body.id = "active";
@@ -8,24 +9,38 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 100)
 })
 
-// Get the modal
 const modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-const img = document.getElementById("art1");
+const galleryImages = document.querySelectorAll(".gallery .gallery-item");
 const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("caption");
-img.onclick = function () {
-    modal.style.display = "flex";
-    modal.classList.toggle("dark");
-    modalImg.src = this.src;
+
+galleryImages.forEach(img => {
+    img.onclick = function () {
+        // onclick, show modal display as "flex"
+        modal.style.display = "flex";
+        // set a timeout so the page renders the transition
+        setTimeout(() => {
+            modal.classList.add("show")
+            modalImg.classList.add("zoom");
+        }, 0)
+        // set the modal img to the img that was clicked
+        modalImg.src = this.src;
+    }
+})
+
+function closeModal() {
+    // out transition
+    modal.classList.remove("show")
+    modalImg.classList.remove("zoom");
+    // wait until classes are removed before displaying "none"
+    setTimeout(() => modal.style.display = "none", 200);
 }
 
-// Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-    modal.classList.toggle("dark");
+span.onclick = closeModal;
+
+modal.onclick = function (e) {
+    if (e.target === modal) {
+        closeModal();
+    }
 }

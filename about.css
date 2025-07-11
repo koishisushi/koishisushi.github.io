@@ -255,30 +255,36 @@ body {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.9);
+    opacity: 0;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.2s linear;
+}
+
+.modal.show {
+    opacity: 1;
 }
 
 .modal-content {
     margin: auto;
     display: block;
     width: 50vh;
-    animation-name: zoom;
-    animation-duration: 0.3s;
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in;
 }
 
-@keyframes zoom {
-    from {transform:scale(0.7)}
-    to {transform:scale(1)}
+.modal-content.zoom {
+    transform: scale(1);
+    transition: transform 0.2s ease-out
 }
 
 .close {
+    font-family: Calibri, sans-serif;
     position: absolute;
     top: 15px;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
-    font-weight: bold;
     transition: 0.3s;
 }
 
