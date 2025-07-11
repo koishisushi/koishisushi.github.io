@@ -12,10 +12,10 @@ galleryImages.forEach(img => {
         modal.style.display = "flex";
 
         // set a timeout so the page renders the transition
-        requestAnimationFrame(() => {
-            modal.classList.add("show");
+        setTimeout(() => {
+            modal.classList.add("show")
             modalImg.classList.add("zoom");
-        });
+        }, 0)
     }
 })
 
