@@ -11,9 +11,12 @@ galleryImages.forEach(img => {
         // onclick, show modal display as "flex"
         modal.style.display = "flex";
 
-        void modal.offsetHeight;
-        modal.classList.add("show");
-        modalImg.classList.add("zoom");
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                modal.classList.add("show");
+                modalImg.classList.add("zoom");
+            });
+        });
     }
 })
 
