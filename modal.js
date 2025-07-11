@@ -4,15 +4,18 @@ const modalImg = document.getElementById("img01");
 
 galleryImages.forEach(img => {
     img.onclick = function () {
-        // onclick, show modal display as "flex"
-        modal.style.display = "flex";
-        // set a timeout so the page renders the transition
-        setTimeout(() => {
-            modal.classList.add("show")
-            modalImg.classList.add("zoom");
-        }, 0)
+        if (modal.classList.contains("show")) return;
+
         // set the modal img to the img that was clicked
         modalImg.src = this.dataset.fullsrc;
+        // onclick, show modal display as "flex"
+        modal.style.display = "flex";
+
+        // set a timeout so the page renders the transition
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+            modalImg.classList.add("zoom");
+        });
     }
 })
 
@@ -20,16 +23,30 @@ function closeModal() {
     // out transition
     modal.classList.remove("show")
     modalImg.classList.remove("zoom");
-    // wait until classes are removed before displaying "none"
-    setTimeout(() => modal.style.display = "none", 200);
 }
 
-const span = document.getElementsByClassName("close")[0];
+const span = document.querySelector(".close");
 
 span.onclick = closeModal;
 
 modal.onclick = function (e) {
-    if (e.target === modal) {
+    if (e.target !== modal) {
+        return;
+    }
+    closeModal();
+}
+
+// support for esc key to exit image view
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("show")) {
         closeModal();
     }
-}
+});
+
+// wait until classes are removed before displaying "none"
+modal.addEventListener("transitionend", () => {
+    if (!modal.classList.contains("show")) {
+        modal.style.display = "none";
+        modalImg.src = "";
+    }
+});
