@@ -71,7 +71,6 @@ body {
     }
 }
 
-
 .main-box {
     display: flex;
     flex-direction: column;
@@ -148,7 +147,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 406px;
-    width: 330px;
+    width: 320px;
     padding: 15px 15px 0;
     margin: 0 auto 15px;
     gap: 10px 15px;
@@ -159,7 +158,7 @@ body {
 
 @supports selector(:-moz-focusring) {
     .desc {
-        width: 320px;
+        width: 310px;
     }
 }
 

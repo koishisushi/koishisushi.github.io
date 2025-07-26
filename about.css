@@ -71,7 +71,6 @@ body {
     }
 }
 
-
 .main-box {
     display: flex;
     flex-direction: column;
@@ -155,6 +154,12 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-gutter: stable both-edges;
+}
+
+@supports selector(:-moz-focusring) {
+    .desc {
+        width: 310px;
+    }
 }
 
 .desc p {
